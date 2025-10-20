@@ -1,0 +1,32 @@
+<div class="container-fluid p-0">
+  <div class="mb-3">
+    <h1 class="h3"><%= @book.title %></h1>
+  </div>
+
+  <div class="card shadow-sm mb-3">
+    <div class="card-header bg-white">
+      <h5 class="mb-0">Book Details</h5>
+    </div>
+    <div class="card-body">
+      <dl class="row mb-0">
+        <dt class="col-sm-3 fw-semibold">Title:</dt>
+        <dd class="col-sm-9"><%= @book.title %></dd>
+
+        <dt class="col-sm-3 fw-semibold">Author:</dt>
+        <dd class="col-sm-9"><%= @book.author %></dd>
+
+        <dt class="col-sm-3 fw-semibold">Year:</dt>
+        <dd class="col-sm-9"><%= @book.year %></dd>
+
+        <dt class="col-sm-3 fw-semibold">Description:</dt>
+        <dd class="col-sm-9"><%= @book.description %></dd>
+      </dl>
+
+      <div class="mt-4 d-flex gap-2">
+        <%= link_to "Edit", edit_book_path(@book), class: "btn btn-warning rounded-pill" %>
+        <%= button_to "Delete", book_path(@book), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger rounded-pill" %>
+        <%= link_to "Back to Books", books_path, class: "btn btn-outline-secondary rounded-pill" %>
+      </div>
+    </div>
+  </div>
+</div>
