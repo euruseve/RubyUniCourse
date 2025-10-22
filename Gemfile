@@ -43,6 +43,9 @@ gem 'dry-matcher'
 gem 'dry-monads'
 gem 'dry-rails', '~> 0.3'
 
+gem 'jbuilder'
+gem 'kaminari'
+
 group :development do
   gem 'amazing_print'
   gem 'annotaterb'
@@ -60,6 +63,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
 
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+
   gem 'dotenv-rails'
   gem 'rubocop', '~> 1.48', require: false
   gem 'rubocop-i18n', require: false
@@ -71,11 +77,11 @@ end
 
 group :test do
   gem 'airborne'
-  gem 'factory_bot_rails'
+  # gem 'factory_bot_rails'
   gem 'n_plus_one_control'
 
   gem 'rspec_junit_formatter', require: false
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'simplecov-cobertura', require: false
 
