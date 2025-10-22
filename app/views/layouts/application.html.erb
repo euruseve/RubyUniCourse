@@ -17,6 +17,27 @@
 
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <%= link_to "Bookshelf", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Books", books_path, class: "nav-link #{controller_name == 'books' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Authors", authors_path, class: "nav-link #{controller_name == 'authors' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Import", imports_path, class: "nav-link #{controller_name == 'imports' ? 'active' : ''}" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <% if notice %>
     <div class="container mt-3">

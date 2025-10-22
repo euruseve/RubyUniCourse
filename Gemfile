@@ -46,6 +46,12 @@ gem 'dry-rails', '~> 0.3'
 gem 'jbuilder'
 gem 'kaminari'
 
+gem 'csv'
+
+gem 'fastimage'
+gem 'image_processing'
+gem 'shrine'
+
 group :development do
   gem 'amazing_print'
   gem 'annotaterb'

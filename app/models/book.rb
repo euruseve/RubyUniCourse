@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  author      :string
+#  cover_data  :text
 #  description :text
 #  title       :string
 #  year        :integer
@@ -19,11 +20,13 @@
 #
 #  fk_rails_...  (author_id => authors.id)
 #
+#  fk_rails_...  (author_id => authors.id)
 class Book < ApplicationRecord
+  include CoverUploader::Attachment(:cover)
+
   belongs_to :author, optional: true
 
   validates :title, presence: true
-  validates :author_name, presence: true
   validates :year, presence: true,
                    numericality: { only_integer: true,
                                    greater_than_or_equal_to: 1900,
@@ -47,4 +50,9 @@ class Book < ApplicationRecord
   }
 
   delegate :name, to: :author, prefix: true, allow_nil: true
+
+  # Метод для отримання URL обкладинки
+  def cover_url(version = :original)
+    cover&.url
+  end
 end
