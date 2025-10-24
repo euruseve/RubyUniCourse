@@ -52,7 +52,10 @@ gem 'fastimage'
 gem 'image_processing'
 gem 'shrine'
 
+gem 'graphql'
+
 group :development do
+  gem 'graphiql-rails'
   gem 'amazing_print'
   gem 'annotaterb'
   gem 'bundler-audit', require: false

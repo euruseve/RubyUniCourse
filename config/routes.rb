@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  # GraphQL
+  post '/graphql', to: 'graphql#execute'
+
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql' if Rails.env.development?
+
   root 'books#index'
 
-  # Web маршрути
   resources :books
   resources :authors, only: %i[index show]
   resources :imports, only: %i[index new create show]
